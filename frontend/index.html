@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartFuture Career Hub KE — Your Future Starts Here</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span class="logo-icon">◈</span>
+      <span class="logo-text">SmartFuture<span class="logo-ke">KE</span></span>
+    </div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#courses">Course Finder</a></li>
+      <li><a href="#career-test">Career Test</a></li>
+      <li><a href="#institutions">Institutions</a></li>
+      <li><a href="#resources">Resources</a></li>
+      <li><a href="#media">Gallery</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">🇰🇪 Kenya's #1 Career Guidance Platform</div>
+    <h1 class="hero-title">
+      Unlock Your<br/>
+      <span class="gradient-text">Dream Career</span><br/>
+      with Smart Guidance
+    </h1>
+    <p class="hero-subtitle">
+      Get personalised course recommendations, calculate your cluster points, and explore universities across Kenya — powered by real KUCCPS data.
+    </p>
+    <div class="hero-cta">
+      <a href="#courses" class="btn-primary">Find My Courses ↓</a>
+      <a href="#career-test" class="btn-ghost">Take Career Test</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><strong>15+</strong><span>Years Experience</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>50K+</strong><span>Students Helped</span></div>
+      <div class="stat-divider"></div>
+      <div class="stat"><strong>100+</strong><span>Institutions Listed</span></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="glass-card floating">
+      <div class="card-icon">🎓</div>
+      <div><div class="card-label">Cluster Points</div><div class="card-value">36.82</div></div>
+    </div>
+    <div class="glass-card floating delay-1">
+      <div class="card-icon">📚</div>
+      <div><div class="card-label">Recommended</div><div class="card-value">12 Courses</div></div>
+    </div>
+    <div class="glass-card floating delay-2">
+      <div class="card-icon">🏫</div>
+      <div><div class="card-label">Universities</div><div class="card-value">Kenya Wide</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSE FINDER -->
+<section class="section" id="courses">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">🔍 Course Finder</div>
+      <h2>Find Your Perfect Course</h2>
+      <p>Enter your KCSE results and we'll recommend the best courses. Pay KES 50 to unlock your personalised results.</p>
+    </div>
+
+    <!-- Step 1 -->
+    <div class="finder-card" id="step1">
+      <div class="step-indicator">
+        <div class="step active">1</div>
+        <div class="step-line"></div>
+        <div class="step">2</div>
+        <div class="step-line"></div>
+        <div class="step">3</div>
+      </div>
+      <h3>Step 1: Enter Your KCSE Subjects & Grades</h3>
+      <p class="step-desc">Select 7–8 subjects you sat for and enter your grade for each.</p>
+      <div class="subject-grid" id="subjectGrid"></div>
+      <div class="mean-grade-row">
+        <label>KCSE Mean Grade</label>
+        <select id="meanGrade">
+          <option value="">-- Select Mean Grade --</option>
+          <option value="A">A (Plain)</option>
+          <option value="A-">A- (Minus)</option>
+          <option value="B+">B+ (Plus)</option>
+          <option value="B">B (Plain)</option>
+          <option value="B-">B- (Minus)</option>
+          <option value="C+">C+ (Plus)</option>
+          <option value="C">C (Plain)</option>
+          <option value="C-">C- (Minus)</option>
+          <option value="D+">D+ (Plus)</option>
+          <option value="D">D (Plain)</option>
+          <option value="D-">D- (Minus)</option>
+          <option value="E">E</option>
+        </select>
+      </div>
+      <button class="btn-primary full-width" onclick="goToPayment()">View Eligible Courses — KES 50 →</button>
+    </div>
+
+    <!-- Step 2: Payment -->
+    <div class="finder-card hidden" id="step2">
+      <div class="step-indicator">
+        <div class="step">1</div>
+        <div class="step-line"></div>
+        <div class="step active">2</div>
+        <div class="step-line"></div>
+        <div class="step">3</div>
+      </div>
+      <h3>Step 2: Unlock Your Results</h3>
+      <p class="step-desc">Pay KES 50 via M-Pesa to receive your personalised course recommendations and cluster points.</p>
+      <div class="payment-box">
+        <div class="payment-icon">📱</div>
+        <div class="payment-info">
+          <h4>M-Pesa STK Push</h4>
+          <p>A payment prompt will be sent to your phone. Enter your M-Pesa PIN to complete.</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="phoneInput">M-Pesa Phone Number</label>
+        <div class="phone-input-wrap">
+          <span class="phone-prefix">+254</span>
+          <input type="tel" id="phoneInput" placeholder="7XXXXXXXX" maxlength="9" />
+        </div>
+        <small>Enter your Safaricom number registered with M-Pesa</small>
+      </div>
+      <div class="amount-display">
+        <span>Amount:</span>
+        <strong>KES 50</strong>
+      </div>
+      <div id="paymentStatus" class="payment-status hidden"></div>
+      <div class="pay-buttons">
+        <button class="btn-ghost" onclick="backToStep1()">← Back</button>
+        <button class="btn-primary" id="payBtn" onclick="initiatePayment()">
+          <span id="payBtnText">Pay KES 50 via M-Pesa</span>
+          <span id="payBtnSpinner" class="spinner hidden"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3: Results -->
+    <div class="finder-card hidden" id="step3">
+      <div class="step-indicator">
+        <div class="step">1</div>
+        <div class="step-line"></div>
+        <div class="step">2</div>
+        <div class="step-line"></div>
+        <div class="step active">3</div>
+      </div>
+      <h3>✅ Your Course Recommendations</h3>
+      <div id="clusterPoints"></div>
+      <div id="courseResults"></div>
+      <button class="btn-ghost" onclick="resetFinder()" style="margin-top:1rem">← Start Over</button>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER TEST -->
+<section class="section dark-section" id="career-test">
+  <div class="container">
+    <div class="section-header light">
+      <div class="section-tag">🧭 Career Test</div>
+      <h2>Discover Your Career Path</h2>
+      <p>Select your interests and we'll match you with the most suitable career paths.</p>
+    </div>
+    <div class="career-test-container">
+      <div class="interest-grid" id="interestGrid"></div>
+      <div class="career-results glass-panel hidden" id="careerResults">
+        <h3>🎯 Your Career Matches</h3>
+        <div id="careerMatchList"></div>
+      </div>
+      <div style="text-align:center;margin-top:2rem">
+        <button class="btn-primary" onclick="runCareerTest()">Find My Career Path →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTITUTIONS -->
+<section class="section" id="institutions">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">🏫 Institutions</div>
+      <h2>Universities in Kenya</h2>
+      <p>Browse accredited public and private universities and their counties.</p>
+    </div>
+    <div class="institutions-tabs">
+      <button class="tab-btn active" onclick="showTab('public')">Public Universities</button>
+      <button class="tab-btn" onclick="showTab('private')">Private Universities</button>
+    </div>
+    <div class="search-bar-wrap">
+      <input type="text" id="institutionSearch" placeholder="🔍 Search by name or county…" oninput="filterInstitutions()" />
+    </div>
+    <div class="institutions-grid" id="institutionGrid"></div>
+  </div>
+</section>
+
+<!-- RESOURCES -->
+<section class="section dark-section" id="resources">
+  <div class="container">
+    <div class="section-header light">
+      <div class="section-tag">📂 Resources</div>
+      <h2>Cluster Resources & Requirements</h2>
+      <p>Documents, cluster weights, and programme requirements — updated regularly.</p>
+    </div>
+    <div class="resources-grid">
+      <div class="resource-card glass-panel">
+        <div class="resource-icon">🎓</div>
+        <h4>Degree Programmes</h4>
+        <div class="placeholder-badge">DATA TO BE INSERTED HERE</div>
+        <p>Full list of degree programmes with cluster subject requirements and minimum cut-off points.</p>
+      </div>
+      <div class="resource-card glass-panel">
+        <div class="resource-icon">⚖️</div>
+        <h4>Cluster Weights</h4>
+        <div class="placeholder-badge">DATA TO BE INSERTED HERE</div>
+        <p>Official cluster subject weights per course category as per KUCCPS guidelines.</p>
+      </div>
+      <div class="resource-card glass-panel">
+        <div class="resource-icon">📋</div>
+        <h4>KUCCPS Courses</h4>
+        <div class="placeholder-badge">DATA TO BE INSERTED HERE</div>
+        <p>Complete KUCCPS course listing with institution codes and available slots.</p>
+      </div>
+      <div class="resource-card glass-panel">
+        <div class="resource-icon">🔧</div>
+        <h4>TVET Programmes</h4>
+        <div class="placeholder-badge">DATA TO BE INSERTED HERE</div>
+        <p>Technical and vocational training programmes available across Kenya.</p>
+      </div>
+      <div class="resource-card glass-panel">
+        <div class="resource-icon">💰</div>
+        <h4>HELB Application Guide</h4>
+        <div class="placeholder-badge">DATA TO BE INSERTED HERE</div>
+        <p>Step-by-step guide to applying for HELB student loans and bursaries.</p>
+      </div>
+      <div class="resource-card glass-panel">
+        <div class="resource-icon">📝</div>
+        <h4>KUCCPS Application Guide</h4>
+        <div class="placeholder-badge">DATA TO BE INSERTED HERE</div>
+        <p>How to apply for university placement through the KUCCPS portal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="media">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">🖼️ Gallery</div>
+      <h2>Our Impact in Pictures</h2>
+      <p>Students we've guided, events we've hosted, and milestones we've celebrated.</p>
+    </div>
+    <div class="media-grid" id="mediaGrid"></div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section dark-section" id="about">
+  <div class="container">
+    <div class="about-layout">
+      <div class="about-text">
+        <div class="section-tag">ℹ️ About Us</div>
+        <h2>Guiding Kenyan<br/>Students Since 2010</h2>
+        <p>We have been helping students in career guidance, KUCCPS application, and HELB application since 2010. Over more than a decade, we have helped tens of thousands of Kenyan students find their path and access higher education confidently.</p>
+        <div class="about-mvv">
+          <div class="mvv-card glass-panel">
+            <div class="mvv-icon">👁️</div>
+            <h4>Our Vision</h4>
+            <p>Empower students with smart career decision tools that shape the future of Kenya.</p>
+          </div>
+          <div class="mvv-card glass-panel">
+            <div class="mvv-icon">🎯</div>
+            <h4>Our Mission</h4>
+            <p>Provide accurate and accessible career guidance solutions to every student in Kenya.</p>
+          </div>
+        </div>
+      </div>
+      <div class="about-stats-visual">
+        <div class="big-stat glass-panel"><div class="big-num">15+</div><div class="big-label">Years of Service</div></div>
+        <div class="big-stat glass-panel"><div class="big-num">50K+</div><div class="big-label">Students Guided</div></div>
+        <div class="big-stat glass-panel"><div class="big-num">47</div><div class="big-label">Counties Covered</div></div>
+        <div class="big-stat glass-panel"><div class="big-num">100%</div><div class="big-label">Commitment</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">📞 Contact</div>
+      <h2>Get In Touch</h2>
+      <p>Have questions? Our team is ready to help you every step of the way.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card glass-panel">
+        <div class="contact-icon">📧</div>
+        <h4>Email Us</h4>
+        <a href="mailto:smartfuture254@gmail.com">smartfuture254@gmail.com</a>
+      </div>
+      <div class="contact-card glass-panel">
+        <div class="contact-icon">📱</div>
+        <h4>Call / WhatsApp</h4>
+        <a href="tel:+254769642043">0769 642 043</a>
+        <a href="tel:+254711416574">0711 416 574</a>
+      </div>
+      <div class="contact-card glass-panel">
+        <div class="contact-icon">💬</div>
+        <h4>WhatsApp Chat</h4>
+        <a href="https://wa.me/254711416574" target="_blank">Chat with us on WhatsApp →</a>
+      </div>
+      <div class="contact-card glass-panel">
+        <div class="contact-icon">⏰</div>
+        <h4>Working Hours</h4>
+        <p>Mon – Sat: 8:00 AM – 6:00 PM<br/>Sunday: 10:00 AM – 4:00 PM</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="nav-logo" style="margin-bottom:1rem">
+          <span class="logo-icon">◈</span>
+          <span class="logo-text">SmartFuture<span class="logo-ke">KE</span></span>
+        </div>
+        <p>Kenya's leading career guidance platform helping students make informed choices about their future since 2010.</p>
+      </div>
+      <div class="footer-links">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#courses">Course Finder</a></li>
+          <li><a href="#career-test">Career Test</a></li>
+          <li><a href="#institutions">Institutions</a></li>
+          <li><a href="#resources">Resources</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h5>Support</h5>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="mailto:smartfuture254@gmail.com">Email Support</a></li>
+          <li><a href="https://wa.me/254711416574" target="_blank">WhatsApp</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h5>Contact Info</h5>
+        <p>📧 smartfuture254@gmail.com</p>
+        <p>📱 0769 642 043</p>
+        <p>📱 0711 416 574</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 SmartFuture Career Hub KE. All rights reserved.</p>
+      <p class="dev-credit">Developed by <strong>Prof. Abednego Omurwa (0769642043)</strong> and his team. Need a website? Reach out today.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/254711416574" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="white">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.832.737 5.49 2.027 7.8L0 32l8.437-2.01A15.94 15.94 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm8.271 22.271c-.347.974-2.025 1.861-2.78 1.98-.755.118-1.69.168-2.72-.168-.627-.2-1.432-.466-2.46-.913-4.325-1.87-7.148-6.245-7.362-6.533-.213-.287-1.74-2.315-1.74-4.414 0-2.1 1.1-3.13 1.49-3.556.39-.426.85-.533 1.134-.533.283 0 .566.003.814.013.261.012.61-.099.955.729.347.828 1.18 2.865 1.285 3.073.106.208.177.452.035.728-.142.277-.213.449-.425.692-.213.244-.448.545-.638.732-.213.208-.435.433-.187.85.249.418 1.106 1.826 2.374 2.96 1.631 1.454 3.006 1.904 3.43 2.116.424.212.672.177.92-.106.249-.284 1.063-1.24 1.347-1.665.283-.424.566-.354.955-.213.39.142 2.476 1.168 2.9 1.38.424.213.707.319.813.496.106.177.106 1.026-.241 2z"/>
+  </svg>
+  <span class="whatsapp-tooltip">Chat with us</span>
+</a>
+
+<!-- TOAST -->
+<div id="toast" class="toast hidden"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
